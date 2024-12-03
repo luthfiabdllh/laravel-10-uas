@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Transaksi</h5>
-                            <h4><span class="badge text-bg-secondary">{{ number_format($transaksi_count, 0, '.', '.') }}</span></h4>
+                            <h4><span class="badge text-bg-primary">{{ number_format($transaksi_count, 0, '.', '.') }}</span></h4>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Jumlah Item Terjual</h5>
-                            <h4><span class="badge text-bg-secondary">{{ number_format($item_count, 0, '.', '.') }}</span></h4>
+                            <h4><span class="badge text-bg-danger">{{ number_format($item_count, 0, '.', '.') }}</span></h4>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Omzet</h5>
-                            <h4><span class="badge text-bg-secondary">{{ number_format($omzet, 0, '.', '.')}}</span></h4>
+                            <h4><span class="badge text-bg-warning">Rp {{ number_format($omzet, 0, ',', '.') }}</span></h4>
                         </div>
                     </div>
                 </div>
