@@ -1,4 +1,5 @@
-
+@extends('layouts')
+@section('content')
     <h2>Tambah Transaksi</h2>
     <div class="card">
         <div class="card-header bg-white">
@@ -164,9 +165,11 @@
             </form>
         </div>
     </div>
-
+@endsection
 
 {{--customjs--}}
+
+@push('customjs')
 <script>
     $(document).ready(function() {
         let subtotals = {
@@ -201,3 +204,4 @@
         });
     });
 </script>
+@endpush

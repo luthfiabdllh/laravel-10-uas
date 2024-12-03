@@ -1,4 +1,5 @@
-
+@extends('layouts')
+@section('content')
     <h2>Edit Transaksi</h2>
     <div class="card">
         <div class="card-header bg-white">
@@ -48,9 +49,10 @@
             </form>
         </div>
     </div>
-
+@endsection
 
 {{--customjs--}}
+@push('customjs')
 <script>
     $(document).ready(function() {
         function calculateKembalian() {
@@ -65,3 +67,4 @@
         });
     });
 </script>
+@endpush
