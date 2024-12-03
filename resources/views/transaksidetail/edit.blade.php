@@ -1,4 +1,5 @@
-
+@extends('layouts')
+@section('content')
     <h2>Edit Detail Transaksi</h2>
     <div class="card">
         <div class="card-header bg-white">
@@ -14,33 +15,33 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action={{ route('transaksidetail.update', $transaksidetail->id) }}>
+            <form method="POST" action="{{ route('transaksidetail.update', $transaksidetail->id) }}">
                 @csrf
                 @method('PUT')
                 <div class="d-flex flex-column gap-4 mb-4">
                     <div class="form-group">
                         <label>Nama Produk</label>
-                        <input type="text" class="form-control" name="" value="{{ $transaksidetail-> }}" required>
+                        <input type="text" class="form-control" name="nama_produk" value="{{ $transaksidetail->nama_produk }}" required>
                     </div>
                     <div class="form-group">
                         <label>Harga Satuan</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">Rp</span>
-                            <input type="number" class="form-control" name="" value="{{ $transaksidetail-> }}" required>
+                            <input type="number" class="form-control" name="harga_satuan" value="{{ $transaksidetail->harga_satuan }}" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Jumlah</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">Rp</span>
-                            <input type="number" class="form-control" name="" value="{{ $transaksidetail-> }}" required>
+                            <input type="number" class="form-control" name="jumlah" value="{{ $transaksidetail->jumlah }}" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Subtotal</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">Rp</span>
-                            <input type="text" class="form-control" name="" value="{{ $transaksidetail-> }}" disabled>
+                            <input type="text" class="form-control" name="subtotal" value="{{ $transaksidetail->subtotal }}" disabled>
                         </div>
                     </div>
                 </div>
@@ -48,9 +49,9 @@
             </form>
         </div>
     </div>
+@endsection
 
-
-{{--customjs--}}
+@push('customjs')
 <script>
     $(document).ready(function() {
         function calculateSubtotal() {
@@ -60,8 +61,9 @@
             $('input[name="subtotal"]').val(subtotal);
         }
 
-        $('input[name="harga_satuan"], input[name="jumlah"]').on('', function() {
+        $('input[name="harga_satuan"], input[name="jumlah"]').on('input', function() {
             calculateSubtotal();
         });
     });
 </script>
+@endpush
