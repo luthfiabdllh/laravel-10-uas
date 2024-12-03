@@ -1,4 +1,6 @@
+@extends('layouts')
 
+@section('content')
 <div class="d-flex flex-column gap-4">
     <div class="card">
         <div class="card-header">SUMMARY</div>
@@ -32,7 +34,7 @@
         </div>
     </div>
 
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-header">DATA</div>
         <div class="card-body">
             <div class="list-group">
@@ -41,5 +43,6 @@
                 <a href="{{ route('') }}" class="list-group-item list-group-item-action">Lihat Transaksi Detail</a>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
+@endsection
