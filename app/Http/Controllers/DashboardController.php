@@ -10,5 +10,6 @@ class DashboardController extends Controller
     {
         $transaksi_count = Transaksi::count();
         return view('dashboard', compact('transaksi_count'));
+        
     }
 }
