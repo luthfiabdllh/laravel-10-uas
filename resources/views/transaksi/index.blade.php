@@ -49,3 +49,7 @@
         </div>
     </div>
 @endsection
+
+@push('customjs')
+    @include('component.datatable')
+@endpush

@@ -29,7 +29,7 @@
                     {{ number_format($transaksi->kembalian, 0, '.', '.') }}
                 </li>
             </ul>
-            <table class="table table-bordered">
+            <table class="table table-bordered datatable">
                 <thead>
                 <tr>
                     <th>No</th>
@@ -74,3 +74,6 @@
         </div>
     </div>
 @endsection
+@push('customjs')
+    @include('component.datatable')
+@endpush
